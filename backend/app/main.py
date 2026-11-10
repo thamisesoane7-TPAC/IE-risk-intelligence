@@ -13,6 +13,11 @@ from app.database import (
     get_session_factory
 )
 from app.models import Business
+from app.services.synthetic import (
+    PROFILES,
+    generate_ledger,
+)
+from app.services.features import calculate_features
 
 
 Sector = Literal[
@@ -110,6 +115,37 @@ def create_app(database_url: str | None = None) -> FastAPI:
             )
 
         return business
+
+
+    @app.get("/api/v1/demo-businesses")
+    def list_demo_businesses() -> list[dict[str, str]]:
+        return [
+            {
+                "business_id": str(p["id"]),
+                "sector": str(p["sector"]),
+            }
+            for p in PROFILES
+        ]
+
+    @app.get(
+        "/api/v1/demo-businesses/{business_id}/features"
+    )
+    def demo_business_features(
+        business_id: str,
+    ) -> dict:
+        known_ids = {p["id"] for p in PROFILES}
+
+        if business_id not in known_ids:
+            raise HTTPException(
+                status_code=404,
+                detail="Demo business not found",
+            )
+
+        ledger = generate_ledger(seed=42, days=120)
+        return calculate_features(
+            ledger,
+            business_id,
+        )
 
     return app
 
