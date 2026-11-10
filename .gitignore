@@ -6,3 +6,9 @@ backend/data/*.sqlite3
 
 # Generated demonstration data
 backend/data/synthetic_daily_ledger.csv
+
+# Python generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
