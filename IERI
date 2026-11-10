@@ -1,0 +1,10 @@
+
+# IERI — Informal Economy Risk Intelligence
+
+An explainable financial risk intelligence platform for underserved South African microenterprises.
+
+## Technology
+Python | FastAPI | PostgreSQL | XGBoost | React
+
+## Status
+Phase 1 — Backend Foundation
