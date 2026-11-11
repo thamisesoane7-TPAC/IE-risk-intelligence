@@ -12,3 +12,14 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
+
+# IERI generated research artifacts and isolated environment
+/.venv-ieri/
+/backend/risk_data/
+/backend/artifacts/ieri/
+/backend/risk_examples/
+/backend/risk_reports/
+/IERI_quant_engine/
+/IERI_quant_engine.zip
+/ieri_quant_engine_install.sh
+*.pyc

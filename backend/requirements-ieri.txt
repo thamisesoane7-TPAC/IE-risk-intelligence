@@ -1,0 +1,16 @@
+# Python 3.11 or 3.12; Linux CPU wheels; no GPU, Docker or paid API.
+numpy==2.2.6
+pandas==2.2.3
+scipy==1.15.3
+scikit-learn==1.7.2
+xgboost-cpu==3.0.5
+shap==0.48.0
+numba==0.61.2
+llvmlite==0.44.0
+joblib==1.5.2
+threadpoolctl==3.6.0
+fastapi>=0.115,<1
+pydantic>=2.10,<3
+uvicorn>=0.30,<1
+httpx==0.28.1
+pytest==8.4.2
