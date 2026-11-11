@@ -23,3 +23,7 @@ __pycache__/
 /IERI_quant_engine.zip
 /ieri_quant_engine_install.sh
 *.pyc
+
+# Local IERI environments and uploads
+.venv-ieri/
+/IERI_quant_engine.zip
